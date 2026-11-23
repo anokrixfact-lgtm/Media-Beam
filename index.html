@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="hi-Latn" data-theme="midnight">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Beam</title>
+<link rel="icon" id="fav" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&family=Outfit:wght@400;600;700;800&family=Space+Grotesk:wght@400;600;700&family=Sora:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&family=Lexend:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=DM+Sans:wght@400;600;700&family=Hind:wght@400;600;700&family=Hind+Siliguri:wght@400;600;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--font:"Manrope","Hind","Hind Siliguri",system-ui,"Segoe UI",sans-serif;--r:14px}
+[data-theme=midnight]{--bg:#0b1017;--bg2:#121a24;--bg3:#19232f;--line:#243140;--ink:#e8eef5;--mute:#8394a7;--ac:#2dd4bf;--acink:#032b26;--bad:#ff6b6b;--warn:#fbbf24;--mesh:radial-gradient(42% 38% at 12% 8%,#14b8a666,transparent 70%),radial-gradient(38% 42% at 92% 18%,#3b82f666,transparent 70%),radial-gradient(48% 42% at 68% 100%,#8b5cf666,transparent 70%),radial-gradient(30% 30% at 6% 80%,#3b82f666,transparent 70%)}
+[data-theme=ocean]{--bg:#07111f;--bg2:#0d1d33;--bg3:#132a47;--line:#1c3a5e;--ink:#e4f1ff;--mute:#7a9cbd;--ac:#38bdf8;--acink:#02202f;--bad:#ff6b6b;--warn:#fbbf24;--mesh:radial-gradient(42% 38% at 12% 8%,#06b6d466,transparent 70%),radial-gradient(38% 42% at 92% 18%,#6366f166,transparent 70%),radial-gradient(48% 42% at 68% 100%,#0ea5e966,transparent 70%),radial-gradient(30% 30% at 6% 80%,#6366f166,transparent 70%)}
+[data-theme=violet]{--bg:#100c1f;--bg2:#19132f;--bg3:#231b40;--line:#342a5a;--ink:#efeaff;--mute:#9f94c7;--ac:#a78bfa;--acink:#190c3d;--bad:#ff6b6b;--warn:#fbbf24;--mesh:radial-gradient(42% 38% at 12% 8%,#a855f766,transparent 70%),radial-gradient(38% 42% at 92% 18%,#ec489966,transparent 70%),radial-gradient(48% 42% at 68% 100%,#6366f166,transparent 70%),radial-gradient(30% 30% at 6% 80%,#ec489966,transparent 70%)}
+[data-theme=sunset]{--bg:#160f12;--bg2:#21161a;--bg3:#2c1d23;--line:#422a33;--ink:#fdeee8;--mute:#b8979a;--ac:#fb923c;--acink:#2b1200;--bad:#ff6b6b;--warn:#fbbf24;--mesh:radial-gradient(42% 38% at 12% 8%,#f973165c,transparent 70%),radial-gradient(38% 42% at 92% 18%,#ec48995c,transparent 70%),radial-gradient(48% 42% at 68% 100%,#eab3085c,transparent 70%),radial-gradient(30% 30% at 6% 80%,#ec48995c,transparent 70%)}
+[data-theme=emerald]{--bg:#08130e;--bg2:#0f1f17;--bg3:#162c21;--line:#234032;--ink:#e6f7ee;--mute:#86a893;--ac:#34d399;--acink:#032214;--bad:#ff6b6b;--warn:#fbbf24;--mesh:radial-gradient(42% 38% at 12% 8%,#10b9815c,transparent 70%),radial-gradient(38% 42% at 92% 18%,#14b8a65c,transparent 70%),radial-gradient(48% 42% at 68% 100%,#84cc165c,transparent 70%),radial-gradient(30% 30% at 6% 80%,#14b8a65c,transparent 70%)}
+[data-theme=rose]{--bg:#150a11;--bg2:#201019;--bg3:#2c1623;--line:#43213a;--ink:#ffeaf4;--mute:#c196ad;--ac:#f472b6;--acink:#2d0719;--bad:#ff6b6b;--warn:#fbbf24;--mesh:radial-gradient(42% 38% at 12% 8%,#ec48995c,transparent 70%),radial-gradient(38% 42% at 92% 18%,#f43f5e5c,transparent 70%),radial-gradient(48% 42% at 68% 100%,#a855f75c,transparent 70%),radial-gradient(30% 30% at 6% 80%,#f43f5e5c,transparent 70%)}
+[data-theme=gold]{--bg:#000;--bg2:#0a0a0a;--bg3:#141414;--line:#262626;--ink:#f5f5f5;--mute:#8a8a8a;--ac:#facc15;--acink:#201a00;--bad:#ff6b6b;--warn:#fbbf24;--mesh:radial-gradient(42% 38% at 12% 8%,#facc154d,transparent 70%),radial-gradient(38% 42% at 92% 18%,#f973164d,transparent 70%),radial-gradient(48% 42% at 68% 100%,#a855f74d,transparent 70%),radial-gradient(30% 30% at 6% 80%,#f973164d,transparent 70%)}
+[data-theme=crimson]{--bg:#120709;--bg2:#1d0d11;--bg3:#29141a;--line:#411f27;--ink:#ffecee;--mute:#bf969c;--ac:#f43f5e;--acink:#2c0309;--bad:#ff6b6b;--warn:#fbbf24;--mesh:radial-gradient(42% 38% at 12% 8%,#f43f5e5c,transparent 70%),radial-gradient(38% 42% at 92% 18%,#f973165c,transparent 70%),radial-gradient(48% 42% at 68% 100%,#a855f75c,transparent 70%),radial-gradient(30% 30% at 6% 80%,#f973165c,transparent 70%)}
+[data-theme=paper]{--bg:#eef2f7;--bg2:#ffffff;--bg3:#f4f7fb;--line:#d9e0ea;--ink:#152033;--mute:#64748b;--ac:#2563eb;--acink:#ffffff;--bad:#dc2626;--warn:#d97706;--mesh:radial-gradient(42% 38% at 12% 8%,#3b82f64d,transparent 70%),radial-gradient(38% 42% at 92% 18%,#06b6d44d,transparent 70%),radial-gradient(48% 42% at 68% 100%,#a78bfa4d,transparent 70%),radial-gradient(30% 30% at 6% 80%,#06b6d44d,transparent 70%)}
+[data-theme=mint]{--bg:#eaf5f1;--bg2:#ffffff;--bg3:#f1f9f6;--line:#cfe5dc;--ink:#10241d;--mute:#5f7d71;--ac:#0d9488;--acink:#ffffff;--bad:#dc2626;--warn:#d97706;--mesh:radial-gradient(42% 38% at 12% 8%,#14b8a64d,transparent 70%),radial-gradient(38% 42% at 92% 18%,#84cc164d,transparent 70%),radial-gradient(48% 42% at 68% 100%,#38bdf84d,transparent 70%),radial-gradient(30% 30% at 6% 80%,#84cc164d,transparent 70%)}
+[data-theme=lilac]{--bg:#f1edfa;--bg2:#ffffff;--bg3:#f7f4fd;--line:#ddd3f1;--ink:#1f1535;--mute:#74669a;--ac:#7c3aed;--acink:#ffffff;--bad:#dc2626;--warn:#d97706;--mesh:radial-gradient(42% 38% at 12% 8%,#8b5cf64d,transparent 70%),radial-gradient(38% 42% at 92% 18%,#ec48994d,transparent 70%),radial-gradient(48% 42% at 68% 100%,#60a5fa4d,transparent 70%),radial-gradient(30% 30% at 6% 80%,#ec48994d,transparent 70%)}
+[data-theme=blush]{--bg:#fbeef1;--bg2:#ffffff;--bg3:#fdf4f6;--line:#f0d5dc;--ink:#2e1119;--mute:#8a6270;--ac:#e11d48;--acink:#ffffff;--bad:#be123c;--warn:#d97706;--mesh:radial-gradient(42% 38% at 12% 8%,#fb71854d,transparent 70%),radial-gradient(38% 42% at 92% 18%,#f59e0b4d,transparent 70%),radial-gradient(48% 42% at 68% 100%,#c084fc4d,transparent 70%),radial-gradient(30% 30% at 6% 80%,#f59e0b4d,transparent 70%)}
+
+*{box-sizing:border-box;margin:0}
+html{font-size:16px;-webkit-tap-highlight-color:transparent}
+body{color:var(--ink);font-family:var(--font);line-height:1.5;min-height:100vh;overflow-x:hidden;background:var(--bg);transition:background .25s,color .25s}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(720px 380px at 50% -90px,color-mix(in srgb,var(--ac) 17%,transparent),transparent)}
+button,input,select{font:inherit;color:inherit}
+.hide,[hidden]{display:none!important}
+.small{font-size:.84rem;color:var(--mute)}
+svg{width:1.2em;height:1.2em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding:16px 18px 24px;min-height:100vh;display:flex;flex-direction:column}
+.wrap>*{width:100%}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.sp{justify-content:space-between}
+
+/* header */
+.tb{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 0 22px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.2rem;letter-spacing:-.02em}
+.lg{width:38px;height:38px;border-radius:12px;object-fit:cover;background:var(--bg3);flex:none}
+.ctl{display:flex;gap:8px;align-items:center}
+.icon{width:42px;height:42px;border-radius:12px;background:var(--bg2);border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;flex:none;transition:border-color .15s,background .15s,transform .1s}
+.icon:hover{border-color:var(--ac)}.icon:active{transform:scale(.93)}
+.icon[aria-pressed=true]{background:var(--ac);color:var(--acink);border-color:var(--ac)}
+.icon b{font-size:.95rem;font-weight:800}
+.tdot{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,var(--bg3) 50%,var(--ac) 50%);border:1px solid var(--line);display:block}
+select{height:42px;border-radius:12px;background:var(--bg2);border:1px solid var(--line);padding:0 10px;cursor:pointer}
+select option{background:var(--bg2);color:var(--ink)}
+
+/* buttons / panels */
+.btn{background:var(--ac);color:var(--acink);border:0;border-radius:12px;padding:12px 20px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;justify-content:center;transition:transform .1s,filter .15s;box-shadow:0 10px 22px -14px var(--ac)}
+.btn:hover{filter:brightness(1.08)}.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--ac);background:var(--bg3)}
+.btn.sm{padding:8px 14px;font-size:.86rem;border-radius:10px}
+.btn.lg{width:100%;padding:16px;font-size:1.05rem;border-radius:14px}
+.btn:disabled{opacity:.4;cursor:not-allowed;box-shadow:none}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 40px -30px rgba(0,0,0,.65)}
+.panel>h2{font-size:1.02rem;font-weight:700;margin-bottom:12px;letter-spacing:-.01em}
+.head{margin-bottom:16px}.head h2{font-size:1.5rem;font-weight:800;letter-spacing:-.03em}
+.status{display:inline-flex;align-items:center;gap:9px;background:var(--bg2);border:1px solid var(--line);padding:7px 14px;border-radius:99px;font-size:.85rem;color:var(--mute);max-width:100%}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--warn);flex:none}
+.dot.on{background:var(--ac);animation:pulse 1.8s infinite}.dot.off{background:var(--bad)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ac) 55%,transparent)}100%{box-shadow:0 0 0 9px transparent}}
+.ic{display:grid;place-items:center;background:color-mix(in srgb,var(--ac) 16%,var(--bg3));color:var(--ac)}
+.tip{display:flex;gap:10px;align-items:flex-start;background:color-mix(in srgb,var(--warn) 13%,var(--bg2));border:1px solid color-mix(in srgb,var(--warn) 55%,var(--line));border-radius:14px;padding:12px 16px;margin-bottom:14px;font-size:.9rem}
+.tip::before{content:"⚠";color:var(--warn);font-weight:800}
+
+/* home */
+.home{max-width:760px;margin:0 auto;text-align:center;padding-top:6vh}
+.home h1{font-size:clamp(2.1rem,6.5vw,3.4rem);font-weight:800;letter-spacing:-.04em;line-height:1.08;animation:rise .55s cubic-bezier(.2,.7,.2,1) both}
+.lead{color:var(--mute);margin:14px auto 34px;max-width:480px;font-size:1.05rem}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left}
+@media(max-width:640px){.roles{grid-template-columns:1fr}}
+.role{display:flex;align-items:center;gap:16px;background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:22px;cursor:pointer;transition:transform .18s,border-color .2s,box-shadow .2s}
+.role:hover{transform:translateY(-3px);border-color:var(--ac);box-shadow:0 24px 44px -28px color-mix(in srgb,var(--ac) 80%,transparent)}
+.role:active{transform:scale(.985)}
+.role .ic{width:60px;height:60px;border-radius:18px}.role .ic svg{width:28px;height:28px}
+.role .rt{flex:1;min-width:0}.role .rt b{display:block;font-size:1.25rem;font-weight:800;letter-spacing:-.02em}.role .rt span{color:var(--mute);font-size:.9rem}
+.chev{color:var(--mute)}
+
+/* code */
+.codebox{display:flex;justify-content:center;gap:8px;margin:6px 0 14px;cursor:pointer}
+.codebox b{flex:1;max-width:52px;min-width:0;height:62px;display:grid;place-items:center;font:700 1.9rem/1 "JetBrains Mono",Consolas,monospace;color:var(--ac);background:var(--bg3);border:1px solid var(--line);border-radius:13px;transition:background .2s,color .2s}
+.codebox.cp b{background:var(--ac);color:var(--acink)}
+@media(max-width:400px){.codebox{gap:5px}.codebox b{height:54px;font-size:1.5rem}}
+input.code{background:var(--bg3);border:1px solid var(--line);border-radius:16px;width:100%;text-align:center;font:700 2.2rem/1 "JetBrains Mono",Consolas,monospace;letter-spacing:.3em;padding:20px 8px 20px calc(8px + .3em);margin:4px 0 16px;color:var(--ac)}
+input.code:focus{outline:0;border-color:var(--ac);box-shadow:0 0 0 4px color-mix(in srgb,var(--ac) 22%,transparent)}
+
+/* PC */
+.grid{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:16px;align-items:start}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.side{display:grid;gap:16px;counter-reset:st}
+.side .panel>h2{display:flex;align-items:center;gap:10px}
+.side .panel>h2::before{counter-increment:st;content:counter(st);width:26px;height:26px;border-radius:50%;background:var(--ac);color:var(--acink);display:grid;place-items:center;font-size:.8rem;font-weight:800;flex:none}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.stat{background:var(--bg3);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stat b{display:block;font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat:nth-child(3) b{color:var(--ac)}
+.bin{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.item{display:grid;grid-template-columns:60px 1fr auto;gap:14px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:16px;background:var(--bg3);transition:border-color .15s}
+.item:hover{border-color:var(--ac)}
+.thumb{width:60px;height:60px;border-radius:12px;overflow:hidden;background:var(--bg);display:grid;place-items:center;font-size:.72rem;font-weight:800;color:var(--ac)}
+.thumb:empty{animation:sh 1.2s ease-in-out infinite alternate}
+@keyframes sh{to{background:color-mix(in srgb,var(--ac) 18%,var(--bg))}}
+.thumb img,.thumb video{width:100%;height:100%;object-fit:cover;cursor:pointer}
+.meta{min-width:0}.meta b{display:block;font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:8px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--ac),color-mix(in srgb,var(--ac) 60%,#fff));border-radius:6px;transition:width .2s}
+.acts a{display:block;text-align:center;font-size:.84rem;font-weight:700;padding:8px 14px;border-radius:10px;background:var(--ac);color:var(--acink);text-decoration:none}
+.empty{display:flex;flex-direction:column;align-items:center;gap:10px;border:2px dashed var(--line);border-radius:18px;padding:54px 16px;text-align:center;color:var(--mute);margin-top:14px}
+.empty svg{width:40px;height:40px;opacity:.5}
+
+/* phone */
+.phone{max-width:520px;margin:0 auto}
+.drop{border:2px dashed color-mix(in srgb,var(--ac) 50%,var(--line));border-radius:22px;padding:28px 16px;text-align:center;background:color-mix(in srgb,var(--ac) 6%,transparent)}
+.drop .up{width:64px;height:64px;border-radius:50%;margin:0 auto 12px}.drop .up svg{width:28px;height:28px}
+.drop b{font-size:1.05rem}
+.pick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.pick .btn{padding:14px}
+.qi{display:grid;grid-template-columns:52px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.qi .tn{width:52px;height:52px;border-radius:12px;background:var(--bg);overflow:hidden;display:grid;place-items:center;font-size:.7rem;color:var(--mute)}
+.qi .tn img,.qi .tn video{width:100%;height:100%;object-fit:cover}
+.qi b{font-size:.9rem;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.total{position:sticky;bottom:12px;margin-top:16px;background:var(--bg3);border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:0 14px 30px -14px rgba(0,0,0,.5)}
+.total .bar{height:7px}
+.ft{margin-top:auto;padding-top:34px;text-align:center;font-size:.82rem;font-weight:600;letter-spacing:.03em;color:var(--mute)}
+@media(max-width:560px){.brand span{display:none}.icon{width:38px;height:38px}.ctl{gap:6px}select{height:38px;max-width:96px;padding:0 6px}.wrap{padding:12px 14px 20px}.panel{padding:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="tb">
+  <div class="brand"><img class="lg" alt=""><span>Media Beam</span></div>
+  <div class="ctl">
+    <button class="icon" id="backBtn" hidden aria-label="Back"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button class="icon" id="lanBtn" aria-label="LAN mode" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></button>
+    <button class="icon" id="themeBtn" aria-label="Theme"><i class="tdot"></i></button>
+    <button class="icon" id="fontBtn" aria-label="Font"><b>Aa</b></button>
+    <select id="langSel" aria-label="Language"></select>
+  </div>
+</header>
+
+<main id="home" class="home">
+  <h1 data-i="homeT"></h1>
+  <p class="lead" data-i="homeS"></p>
+  <div class="roles">
+    <div class="role" id="btnMobile" role="button" tabindex="0"><div class="ic"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><div class="rt"><b data-i="mobName"></b><span data-i="mobDesc"></span></div><svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>
+    <div class="role" id="btnPC" role="button" tabindex="0"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><div class="rt"><b data-i="pcName"></b><span data-i="pcDesc"></span></div><svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></div>
+  </div>
+</main>
+
+<section id="pc" class="hide">
+  <div class="row sp head"><h2 data-i="recv"></h2><span class="status"><span class="dot" id="pcDot"></span><span id="pcStatus"></span></span></div>
+  <div id="pathTip" class="tip hide"><span data-i="tipSlow"></span></div>
+  <div class="grid">
+    <aside class="side">
+      <div class="panel" id="codePanel">
+        <h2 data-i="codeT"></h2>
+        <div class="codebox" id="pcCode" title="Copy"><b>·</b><b>·</b><b>·</b><b>·</b><b>·</b><b>·</b></div>
+        <p class="small" data-i="codeH"></p>
+        <button class="btn ghost sm" id="newCode" style="margin-top:14px"><span data-i="newCode"></span></button>
+      </div>
+      <div class="panel hide" id="connPanel"><h2 data-i="stConn"></h2><button class="btn ghost sm" id="newCode2"><span data-i="newCode"></span></button></div>
+      <div class="panel">
+        <h2 data-i="folderT"></h2>
+        <button class="btn lg" id="pickDir"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-i="folderBtn"></span></button>
+        <p class="small" id="dirName" style="margin-top:12px"></p>
+        <p class="small" data-i="folderTip" style="margin-top:6px;opacity:.8"></p>
+      </div>
+    </aside>
+    <div class="panel">
+      <div class="stats">
+        <div class="stat"><span class="small" data-i="files"></span><b id="stFiles">0</b></div>
+        <div class="stat"><span class="small" data-i="total"></span><b id="stSize">0 KB</b></div>
+        <div class="stat"><span class="small" data-i="speed"></span><b id="stSpeed">0 MB/s</b></div>
+      </div>
+      <div class="row">
+        <label class="btn sm" tabindex="0"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></svg><span data-i="sendPhone"></span><input type="file" id="pcFiles" multiple hidden></label>
+        <button class="btn sm" id="dlAll" disabled><span data-i="dlAll"></span></button>
+        <button class="btn ghost sm" id="clearAll" disabled><span data-i="clear"></span></button>
+      </div>
+      <div id="txWrap" class="hide" style="margin-top:16px"><div class="row sp"><b data-i="txT"></b><span class="small" id="txSpeed"></span></div><div id="txList"></div></div>
+      <div id="empty" class="empty"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-i="empty"></span></div>
+      <div class="bin" id="bin"></div>
+    </div>
+  </div>
+</section>
+
+<section id="phone" class="hide phone">
+  <div class="row sp head"><h2 data-i="send"></h2><span class="status"><span class="dot" id="phDot"></span><span id="phStatus"></span></span></div>
+  <div id="phTip" class="tip hide"><span data-i="tipSlow"></span></div>
+  <p id="dbg" class="small hide" style="margin:-4px 0 12px"></p>
+  <div class="panel" id="codeStep">
+    <h2 data-i="enterT"></h2>
+    <input class="code" id="codeIn" type="text" inputmode="numeric" maxlength="6" placeholder="------" autocomplete="off">
+    <button class="btn lg" id="connectBtn"><span data-i="connect"></span></button>
+  </div>
+  <div class="panel hide" id="sendStep">
+    <div class="drop">
+      <div class="ic up"><svg viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></svg></div>
+      <p><b data-i="pickT"></b></p>
+      <div class="pick">
+        <label class="btn" tabindex="0"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg><span data-i="gallery"></span><input type="file" id="fGal" accept="image/*,video/*" multiple hidden></label>
+        <label class="btn ghost" tabindex="0"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span data-i="filesB"></span><input type="file" id="fAny" multiple hidden></label>
+      </div>
+    </div>
+    <div class="row sp" style="margin-top:18px"><span class="small" id="phSummary"></span><button class="btn ghost sm" id="clearDone"><span data-i="clearDone"></span></button></div>
+    <div id="queue"></div>
+    <h2 style="margin-top:22px" data-i="rxT"></h2>
+    <div id="rxList"><span class="small" id="rxEmpty" data-i="rxNone"></span></div>
+    <div class="total"><div class="row sp small"><span id="totTxt">0%</span><span id="totSpeed"></span></div><div class="bar"><i id="totBar"></i></div></div>
+  </div>
+</section>
+
+<footer class="ft">Made by Tech Sumit</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.4/peerjs.min.js"></script>
+<script>
+const LOGO = 'data:image/jpeg;base64,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';
+document.querySelectorAll('img.lg').forEach(i => i.src = LOGO);
+$fav = document.getElementById('fav'); $fav.href = LOGO;
+
+const $ = id => document.getElementById(id);
+const PREFIX = 'tsmedia-', PAR = 12; let CP = 64 * 1024;
+// Alag Wi-Fi / mobile data / door ke liye TURN relay. Apna TURN ho to yahan badal do.
+const TURN = [
+  { urls:'turn:openrelay.metered.ca:80', username:'openrelayproject', credential:'openrelayproject' },
+  { urls:'turn:openrelay.metered.ca:443', username:'openrelayproject', credential:'openrelayproject' },
+  { urls:'turns:openrelay.metered.ca:443?transport=tcp', username:'openrelayproject', credential:'openrelayproject' }
+];
+const LAN_ONLY = localStorage.getItem('mb_lan') === '1';   // ⚡ LAN mode: sirf same Wi-Fi/hotspot, relay/internet band
+const ICE = { config: { iceServers: LAN_ONLY ? [] : [{urls:'stun:stun.l.google.com:19302'},{urls:'stun:stun1.l.google.com:19302'},{urls:'stun:openrelay.metered.ca:80'}, ...TURN], iceCandidatePoolSize: LAN_ONLY ? 0 : 4 } };
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const fmt = n => n >= 1e9 ? (n/1e9).toFixed(2)+' GB' : n >= 1e6 ? (n/1e6).toFixed(1)+' MB' : Math.max(0,Math.round(n/1e3))+' KB';
+const rid = () => crypto.getRandomValues(new Uint32Array(1))[0];
+const newCode = () => String(rid() % 900000 + 100000);
+const kindOf = (t, n='') => /^video/.test(t) || /\.(mp4|mov|mkv|webm|avi|3gp)$/i.test(n) ? 'video' : /^image/.test(t) || /\.(jpe?g|png|gif|webp|heic|heif|bmp)$/i.test(n) ? 'image' : 'other';
+const guessType = n => ({mp4:'video/mp4',mov:'video/quicktime',mkv:'video/x-matroska',webm:'video/webm',jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png',gif:'image/gif',webp:'image/webp',heic:'image/heic'})[(n.split('.').pop()||'').toLowerCase()] || 'application/octet-stream';
+const safeName = n => String(n || 'file').replace(/[\\/:*?"<>|]/g, '_');
+function meter(){ let s = []; return { add(n){ s.push([performance.now(), n]); }, rate(){ const t = performance.now(); s = s.filter(x => t - x[0] < 3000); if (!s.length) return 0; return s.reduce((a,x)=>a+x[1],0) / Math.max(.8,(t - s[0][0])/1000); } }; }
+
+/* ---------- languages ---------- */
+const LANGS = [['hg','Hinglish','hi-Latn'],['en','English','en'],['hi','हिन्दी','hi'],['bn','বাংলা','bn'],['es','Español','es'],['fr','Français','fr']];
+const L = {
+hg:{homeT:'Phone ki files, seedha PC par',homeS:'Dono device par ye page kholo aur ek option chuno.',pcName:'PC',pcDesc:'Files yahan aayengi',mobName:'Mobile',mobDesc:'Files yahan se bhejo',recv:'PC',send:'Mobile',codeT:'Ye code phone me daalo',codeH:'Phone par Mobile dabao aur ye 6 digit code daalo.',newCode:'Naya code',folderT:'Files kahan save ho',folderBtn:'Folder chuno',folderNone:'Folder nahi chuna, files browser me rahengi.',folderSet:'Save folder: {0}',folderTip:'D: drive ka root allow nahi hota, ek folder bana ke wahi chuno.',files:'Files',total:'Total',speed:'Speed',empty:'Abhi koi file nahi aayi.',dl:'Download',dlAll:'Sab download',clear:'Clear',stMake:'Code ban raha hai…',stWait:'Phone ka wait…',stConn:'Phone connected',stLan:'Phone connected · fast',stSlow:'Phone connected · slow, dono ko ek Wi-Fi par lao',stRetry:'Connection tut gaya, dobara jud raha hai…',stDisc:'Phone disconnect ho gaya',stErr:'Error: {0}',incoming:'aa raha hai…',partial:'adhuri file',saveErr:'save nahi hui',savedAs:'saved: {0}',bigFile:'Badi file aa rahi hai, pehle folder chuno.',noFS:'Folder me save karne ke liye Chrome ya Edge chahiye.',enterT:'PC par dikha code daalo',connect:'Connect karo',st6:'6 digit ka code daalo',stEnter:'Code daalo',stConnecting:'Connect ho raha hai…',stNo:'Connect nahi hua, code check karo',stOk:'PC se connected',stWrong:'Code galat hai',stPcDrop:'PC disconnect, dobara code daalo',pickT:'Photos aur videos chuno',gallery:'Gallery',filesB:'Files',sumNone:'Koi file nahi chuni',sumN:'{0} / {1} files bheji',clearDone:'Bheji hui hatao',qWait:'line me',qSave:'PC par save ho rahi hai…',qDone:'bhej di ✓',qEmpty:'khali file',left:'{0} sec baaki',fin:'ho gaya',stRelay:'Phone connected · RELAY (bahut slow)',tipSlow:'Speed kam hai: file ghar ke Wi-Fi se nahi, internet ya relay se ja rahi hai. Phone aur PC ko ek hi Wi-Fi (5GHz) ya phone ke hotspot par lao. Dono device me ⚡ LAN mode on karke bhi dekho.',lanOn:'LAN mode ON: sirf same Wi-Fi, fast. Band karne ke liye dabao',lanOff:'LAN mode OFF. Sirf same Wi-Fi par fast chalane ke liye dabao',sendPhone:'Phone ko bhejo',txT:'Phone ko bheji ja rahi files',rxT:'PC se aayi files',rxNone:'PC se bheji files yahan aayengi',rxSave:'Phone me save karo',rxDone:'aa gayi ✓',txDone:'phone par aa gayi ✓',txSave:'phone save kar raha hai…',txNeed:'Pehle phone connect karo'},
+en:{homeT:'Phone files, straight to your PC',homeS:'Open this page on both devices and pick an option.',pcName:'PC',pcDesc:'Files arrive here',mobName:'Mobile',mobDesc:'Send files from here',recv:'PC',send:'Mobile',codeT:'Enter this code on your phone',codeH:'Tap Mobile on your phone and type this 6-digit code.',newCode:'New code',folderT:'Where to save files',folderBtn:'Choose folder',folderNone:'No folder chosen, files stay in the browser.',folderSet:'Save folder: {0}',folderTip:'The root of D: isn’t allowed, so make a folder and pick it.',files:'Files',total:'Total',speed:'Speed',empty:'No files yet.',dl:'Download',dlAll:'Download all',clear:'Clear',stMake:'Making code…',stWait:'Waiting for phone…',stConn:'Phone connected',stLan:'Phone connected · fast',stSlow:'Phone connected · slow, use the same Wi-Fi on both',stRetry:'Connection lost, reconnecting…',stDisc:'Phone disconnected',stErr:'Error: {0}',incoming:'receiving…',partial:'incomplete file',saveErr:'couldn’t save',savedAs:'saved: {0}',bigFile:'Big file incoming, choose a folder first.',noFS:'Saving to a folder needs Chrome or Edge.',enterT:'Enter the code shown on your PC',connect:'Connect',st6:'Enter the 6-digit code',stEnter:'Enter code',stConnecting:'Connecting…',stNo:'Couldn’t connect, check the code',stOk:'Connected to PC',stWrong:'Wrong code',stPcDrop:'PC disconnected, enter the code again',pickT:'Choose photos and videos',gallery:'Gallery',filesB:'Files',sumNone:'No files chosen',sumN:'{0} / {1} files sent',clearDone:'Remove sent',qWait:'queued',qSave:'saving on PC…',qDone:'sent ✓',qEmpty:'empty file',left:'{0} s left',fin:'done',stRelay:'Phone connected · RELAY (very slow)',tipSlow:'Low speed: files are travelling over the internet or a relay, not your Wi-Fi. Put both devices on the same Wi-Fi (5GHz) or the phone’s hotspot. You can also turn on ⚡ LAN mode on both.',lanOn:'LAN mode ON: same Wi-Fi only, fast. Tap to turn off',lanOff:'LAN mode OFF. Tap for same-Wi-Fi-only fast mode',sendPhone:'Send to phone',txT:'Files going to the phone',rxT:'Files from PC',rxNone:'Files sent from the PC will show up here',rxSave:'Save on phone',rxDone:'received ✓',txDone:'received on phone ✓',txSave:'phone is saving…',txNeed:'Connect the phone first'},
+hi:{homeT:'फ़ोन की फ़ाइलें, सीधे PC पर',homeS:'दोनों डिवाइस पर यह पेज खोलें और एक विकल्प चुनें।',pcName:'PC',pcDesc:'फ़ाइलें यहाँ आएँगी',mobName:'मोबाइल',mobDesc:'फ़ाइलें यहाँ से भेजें',recv:'PC',send:'मोबाइल',codeT:'यह कोड फ़ोन में डालें',codeH:'फ़ोन पर मोबाइल दबाएँ और यह 6 अंकों का कोड डालें।',newCode:'नया कोड',folderT:'फ़ाइलें कहाँ सेव हों',folderBtn:'फ़ोल्डर चुनें',folderNone:'फ़ोल्डर नहीं चुना, फ़ाइलें ब्राउज़र में रहेंगी।',folderSet:'सेव फ़ोल्डर: {0}',folderTip:'D: ड्राइव का रूट अनुमति नहीं देता, एक फ़ोल्डर बनाकर वही चुनें।',files:'फ़ाइलें',total:'कुल',speed:'स्पीड',empty:'अभी कोई फ़ाइल नहीं आई।',dl:'डाउनलोड',dlAll:'सब डाउनलोड',clear:'साफ़ करें',stMake:'कोड बन रहा है…',stWait:'फ़ोन का इंतज़ार…',stConn:'फ़ोन जुड़ गया',stLan:'फ़ोन जुड़ा · तेज़',stSlow:'फ़ोन जुड़ा · धीमा, दोनों को एक Wi-Fi पर लाएँ',stRetry:'कनेक्शन टूटा, फिर से जुड़ रहे हैं…',stDisc:'फ़ोन डिस्कनेक्ट हो गया',stErr:'एरर: {0}',incoming:'आ रही है…',partial:'अधूरी फ़ाइल',saveErr:'सेव नहीं हुई',savedAs:'सेव: {0}',bigFile:'बड़ी फ़ाइल आ रही है, पहले फ़ोल्डर चुनें।',noFS:'फ़ोल्डर में सेव करने के लिए Chrome या Edge चाहिए।',enterT:'PC पर दिखा कोड डालें',connect:'कनेक्ट करें',st6:'6 अंकों का कोड डालें',stEnter:'कोड डालें',stConnecting:'कनेक्ट हो रहा है…',stNo:'कनेक्ट नहीं हुआ, कोड जाँचें',stOk:'PC से जुड़ गया',stWrong:'कोड गलत है',stPcDrop:'PC डिस्कनेक्ट, फिर से कोड डालें',pickT:'फ़ोटो और वीडियो चुनें',gallery:'गैलरी',filesB:'फ़ाइलें',sumNone:'कोई फ़ाइल नहीं चुनी',sumN:'{0} / {1} फ़ाइलें भेजी गईं',clearDone:'भेजी हुई हटाएँ',qWait:'कतार में',qSave:'PC पर सेव हो रही है…',qDone:'भेज दी ✓',qEmpty:'खाली फ़ाइल',left:'{0} सेकंड बाकी',fin:'हो गया'},
+bn:{homeT:'ফোনের ফাইল, সরাসরি PC-তে',homeS:'দুটি ডিভাইসেই এই পেজ খুলুন এবং একটি অপশন বেছে নিন।',pcName:'PC',pcDesc:'ফাইল এখানে আসবে',mobName:'মোবাইল',mobDesc:'ফাইল এখান থেকে পাঠান',recv:'PC',send:'মোবাইল',codeT:'এই কোডটি ফোনে দিন',codeH:'ফোনে মোবাইল চাপুন এবং এই ৬ সংখ্যার কোড দিন।',newCode:'নতুন কোড',folderT:'ফাইল কোথায় সেভ হবে',folderBtn:'ফোল্ডার বাছুন',folderNone:'ফোল্ডার বাছা হয়নি, ফাইল ব্রাউজারে থাকবে।',folderSet:'সেভ ফোল্ডার: {0}',folderTip:'D: ড্রাইভের রুট অনুমতি দেয় না, একটি ফোল্ডার বানিয়ে সেটি বাছুন।',files:'ফাইল',total:'মোট',speed:'স্পিড',empty:'এখনও কোনো ফাইল আসেনি।',dl:'ডাউনলোড',dlAll:'সব ডাউনলোড',clear:'মুছুন',stMake:'কোড তৈরি হচ্ছে…',stWait:'ফোনের অপেক্ষা…',stConn:'ফোন যুক্ত হয়েছে',stLan:'ফোন যুক্ত · দ্রুত',stSlow:'ফোন যুক্ত · ধীর, দুটোকে একই Wi-Fi-তে আনুন',stRetry:'কানেকশন ছিঁড়ে গেছে, আবার যুক্ত হচ্ছে…',stDisc:'ফোন ডিসকানেক্ট হয়েছে',stErr:'এরর: {0}',incoming:'আসছে…',partial:'অসম্পূর্ণ ফাইল',saveErr:'সেভ হয়নি',savedAs:'সেভ: {0}',bigFile:'বড় ফাইল আসছে, আগে ফোল্ডার বাছুন।',noFS:'ফোল্ডারে সেভ করতে Chrome বা Edge লাগবে।',enterT:'PC-তে দেখানো কোড দিন',connect:'কানেক্ট করুন',st6:'৬ সংখ্যার কোড দিন',stEnter:'কোড দিন',stConnecting:'কানেক্ট হচ্ছে…',stNo:'কানেক্ট হয়নি, কোড দেখুন',stOk:'PC-র সাথে যুক্ত',stWrong:'কোড ভুল',stPcDrop:'PC ডিসকানেক্ট, আবার কোড দিন',pickT:'ছবি ও ভিডিও বাছুন',gallery:'গ্যালারি',filesB:'ফাইল',sumNone:'কোনো ফাইল বাছা হয়নি',sumN:'{1}টির মধ্যে {0}টি ফাইল পাঠানো হয়েছে',clearDone:'পাঠানোগুলো সরান',qWait:'সারিতে',qSave:'PC-তে সেভ হচ্ছে…',qDone:'পাঠানো হয়েছে ✓',qEmpty:'খালি ফাইল',left:'আর {0} সেকেন্ড',fin:'হয়ে গেছে'},
+es:{homeT:'Archivos del móvil, directo al PC',homeS:'Abre esta página en ambos dispositivos y elige una opción.',pcName:'PC',pcDesc:'Aquí llegan los archivos',mobName:'Móvil',mobDesc:'Envía los archivos desde aquí',recv:'PC',send:'Móvil',codeT:'Escribe este código en el móvil',codeH:'En el móvil toca Móvil e introduce este código de 6 dígitos.',newCode:'Nuevo código',folderT:'Dónde guardar los archivos',folderBtn:'Elegir carpeta',folderNone:'Sin carpeta, los archivos quedan en el navegador.',folderSet:'Carpeta: {0}',folderTip:'No se permite la raíz de D:, crea una carpeta y elígela.',files:'Archivos',total:'Total',speed:'Velocidad',empty:'Aún no ha llegado ningún archivo.',dl:'Descargar',dlAll:'Descargar todo',clear:'Limpiar',stMake:'Creando código…',stWait:'Esperando el móvil…',stConn:'Móvil conectado',stLan:'Móvil conectado · rápido',stSlow:'Móvil conectado · lento, usa la misma Wi-Fi en ambos',stRetry:'Conexión perdida, reconectando…',stDisc:'Móvil desconectado',stErr:'Error: {0}',incoming:'llegando…',partial:'archivo incompleto',saveErr:'no se pudo guardar',savedAs:'guardado: {0}',bigFile:'Llega un archivo grande, elige primero una carpeta.',noFS:'Para guardar en una carpeta necesitas Chrome o Edge.',enterT:'Escribe el código que muestra el PC',connect:'Conectar',st6:'Escribe el código de 6 dígitos',stEnter:'Escribe el código',stConnecting:'Conectando…',stNo:'No se pudo conectar, revisa el código',stOk:'Conectado al PC',stWrong:'Código incorrecto',stPcDrop:'PC desconectado, escribe el código otra vez',pickT:'Elige fotos y vídeos',gallery:'Galería',filesB:'Archivos',sumNone:'Ningún archivo elegido',sumN:'{0} / {1} archivos enviados',clearDone:'Quitar enviados',qWait:'en cola',qSave:'guardándose en el PC…',qDone:'enviado ✓',qEmpty:'archivo vacío',left:'faltan {0} s',fin:'listo'},
+fr:{homeT:'Fichiers du téléphone, direct sur le PC',homeS:'Ouvrez cette page sur les deux appareils et choisissez une option.',pcName:'PC',pcDesc:'Les fichiers arrivent ici',mobName:'Mobile',mobDesc:'Envoyez les fichiers d’ici',recv:'PC',send:'Mobile',codeT:'Saisissez ce code sur le téléphone',codeH:'Sur le téléphone, touchez Mobile et saisissez ce code à 6 chiffres.',newCode:'Nouveau code',folderT:'Où enregistrer les fichiers',folderBtn:'Choisir un dossier',folderNone:'Aucun dossier, les fichiers restent dans le navigateur.',folderSet:'Dossier : {0}',folderTip:'La racine de D: n’est pas autorisée, créez un dossier et choisissez-le.',files:'Fichiers',total:'Total',speed:'Vitesse',empty:'Aucun fichier reçu pour l’instant.',dl:'Télécharger',dlAll:'Tout télécharger',clear:'Vider',stMake:'Création du code…',stWait:'En attente du téléphone…',stConn:'Téléphone connecté',stLan:'Téléphone connecté · rapide',stSlow:'Téléphone connecté · lent, utilisez le même Wi-Fi',stRetry:'Connexion perdue, reconnexion…',stDisc:'Téléphone déconnecté',stErr:'Erreur : {0}',incoming:'en cours…',partial:'fichier incomplet',saveErr:'échec de l’enregistrement',savedAs:'enregistré : {0}',bigFile:'Gros fichier en cours, choisissez d’abord un dossier.',noFS:'Chrome ou Edge est requis pour enregistrer dans un dossier.',enterT:'Saisissez le code affiché sur le PC',connect:'Connecter',st6:'Saisissez le code à 6 chiffres',stEnter:'Saisissez le code',stConnecting:'Connexion…',stNo:'Connexion impossible, vérifiez le code',stOk:'Connecté au PC',stWrong:'Code incorrect',stPcDrop:'PC déconnecté, saisissez de nouveau le code',pickT:'Choisissez photos et vidéos',gallery:'Galerie',filesB:'Fichiers',sumNone:'Aucun fichier choisi',sumN:'{0} / {1} fichiers envoyés',clearDone:'Retirer les envoyés',qWait:'en attente',qSave:'enregistrement sur le PC…',qDone:'envoyé ✓',qEmpty:'fichier vide',left:'{0} s restantes',fin:'terminé'}
+};
+
+/* ---------- settings: theme (1 button, har click par agla) + language ---------- */
+const THEMES = ['midnight','ocean','violet','sunset','emerald','rose','gold','crimson','paper','mint','lilac','blush'];
+let S = Object.assign({ theme:0, lang:'hg', font:0 }, JSON.parse(localStorage.getItem('mb2') || '{}'));
+if (!L[S.lang]) S.lang = 'hg';
+const saveS = () => localStorage.setItem('mb2', JSON.stringify(S));
+const t = (k, ...a) => { let s = (L[S.lang] && L[S.lang][k]) || L.hg[k] || k; a.forEach((v,i) => s = s.replace('{' + i + '}', v)); return s; };
+
+const stat = { pc:['stMake','',[]], ph:['stEnter','',[]] };
+let folderName = null;
+function setSt(w, key, cls, ...a){ stat[w] = [key, cls || '', a]; renderSt(); }
+function renderSt(){
+  $('pcStatus').textContent = t(stat.pc[0], ...stat.pc[2]); $('pcDot').className = 'dot ' + stat.pc[1];
+  $('phStatus').textContent = t(stat.ph[0], ...stat.ph[2]); $('phDot').className = 'dot ' + stat.ph[1];
+  $('dirName').textContent = folderName ? t('folderSet', folderName) : t('folderNone');
+}
+function applyLang(){
+  document.documentElement.lang = LANGS.find(l => l[0] === S.lang)[2];
+  document.querySelectorAll('[data-i]').forEach(e => e.textContent = t(e.dataset.i));
+  $('langSel').value = S.lang; renderSt();
+}
+LANGS.forEach(([id,name]) => { const o = document.createElement('option'); o.value = id; o.textContent = name; $('langSel').appendChild(o); });
+$('langSel').onchange = e => { S.lang = e.target.value; saveS(); applyLang(); };
+const applyTheme = () => document.documentElement.dataset.theme = THEMES[S.theme % THEMES.length];
+$('themeBtn').onclick = () => { S.theme = (S.theme + 1) % THEMES.length; saveS(); applyTheme(); };
+const FONTS = ['Manrope','Poppins','Outfit','Space Grotesk','Sora','Nunito','Lexend','Plus Jakarta Sans','DM Sans'];
+const applyFont = () => { const f = FONTS[S.font % FONTS.length]; document.documentElement.style.setProperty('--font', `"${f}","Hind","Hind Siliguri",system-ui,sans-serif`); $('fontBtn').title = f; };
+$('fontBtn').onclick = () => { S.font = (S.font + 1) % FONTS.length; saveS(); applyFont(); };
+applyTheme(); applyFont(); applyLang();
+$('lanBtn').setAttribute('aria-pressed', String(LAN_ONLY)); $('lanBtn').title = t(LAN_ONLY ? 'lanOn' : 'lanOff');
+$('lanBtn').onclick = () => { localStorage.setItem('mb_lan', LAN_ONLY ? '0' : '1'); location.reload(); };
+
+let _ac = null, _lastBeep = 0;
+function beep(){ const n = Date.now(); if (n - _lastBeep < 1500) return; _lastBeep = n; try{ _ac = _ac || new (window.AudioContext||webkitAudioContext)(); if (_ac.state === 'suspended') _ac.resume(); const o = _ac.createOscillator(), g = _ac.createGain(); o.connect(g); g.connect(_ac.destination); o.frequency.value = 880; g.gain.setValueAtTime(.1, _ac.currentTime); g.gain.exponentialRampToValueAtTime(.001, _ac.currentTime + .25); o.start(); o.stop(_ac.currentTime + .25); }catch(e){} }
+
+/* ---------- home ---------- */
+const go = fn => { sessionStorage.setItem('mb_role', fn === startPC ? 'pc' : 'phone'); $('home').classList.add('hide'); $('backBtn').hidden = false; fn(); };
+$('btnPC').onclick = () => go(startPC); $('btnMobile').onclick = () => go(startPhone);
+['btnPC','btnMobile'].forEach(id => $(id).addEventListener('keydown', e => { if (e.key === 'Enter') $(id).click(); }));
+$('backBtn').onclick = () => { sessionStorage.clear(); location.reload(); };
+
+/* kis raaste se data ja raha hai: lan / net (internet) / relay */
+async function pathKind(c){
+  try{
+    const st = await c.peerConnection.getStats(); let sel = null;
+    st.forEach(r => { if (r.type === 'transport' && r.selectedCandidatePairId) sel = st.get(r.selectedCandidatePairId); });
+    if (!sel) st.forEach(r => { if (r.type === 'candidate-pair' && r.state === 'succeeded' && (r.nominated || r.selected)) sel = r; });
+    if (!sel) return null;
+    const l = st.get(sel.localCandidateId), r = st.get(sel.remoteCandidateId);
+    if (!l || !r) return null;
+    if (l.candidateType === 'relay' || r.candidateType === 'relay') return 'relay';
+    return l.candidateType === 'host' && r.candidateType === 'host' ? 'lan' : 'net';
+  }catch(e){ return null; }
+}
+
+/* ================= PC ================= */
+function startPC(){
+  $('pc').classList.remove('hide');
+  let dir = null, peer = null, openConns = 0, totalBytes = 0, pT = null, thumbCount = 0;
+  const conns = [], files = new Map(), byId = new Map(), done = [], reserved = new Set(), m = meter();
+  const setCode = c => { $('pcCode').innerHTML = [...c].map(d => '<b>' + d + '</b>').join(''); $('pcCode').dataset.code = c; };
+  $('pcCode').onclick = () => { try{ navigator.clipboard.writeText($('pcCode').dataset.code || ''); }catch(e){} $('pcCode').classList.add('cp'); setTimeout(() => $('pcCode').classList.remove('cp'), 350); };
+
+  // refresh ho ya net jaye: wahi code wapas register hota hai
+  function makePeer(fresh){
+    clearTimeout(pT);
+    const old = peer; peer = null; if (old) try{ old.destroy(); }catch(e){}
+    conns.length = 0; openConns = 0;
+    const code = fresh ? newCode() : (sessionStorage.getItem('mb_code') || newCode());
+    sessionStorage.setItem('mb_code', code); setCode(code); setSt('pc', 'stMake');
+    const me = peer = new Peer(PREFIX + code, ICE), retry = ms => { if (peer === me) pT = setTimeout(() => makePeer(false), ms); };
+    me.on('open', () => { if (openConns <= 0) setSt('pc', 'stWait'); });
+    me.on('disconnected', () => { if (peer === me) try{ me.reconnect(); }catch(e){} });
+    me.on('close', () => retry(1500));
+    me.on('error', e => { if (peer !== me) return; if (e.type === 'unavailable-id') retry(2500); else if (/network|server|socket/.test(e.type)) retry(3000); else setSt('pc', 'stErr', 'off', e.type); });
+    me.on('connection', c => {
+      conns.push(c); openConns++; setSt('pc', 'stConn', 'on'); if (conns.length === 1) checkPath(c);
+      $('codePanel').classList.add('hide'); $('connPanel').classList.remove('hide'); clearTimeout(showCodeT);   // connect ho gaya: code chhupa do
+      txHook(c);
+      c.on('data', d => onData(d, c));
+      c.on('close', () => {
+        openConns--; txResync = true;
+        if (openConns <= 0){
+          openConns = 0; conns.length = 0; txSession = false;
+          txJobs.forEach(j => { if (!txEnded(j)){ j.ready = false; if (j.state === 'send' || j.state === 'sent') j.state = 'wait'; } });
+          setSt('pc', 'stRetry', 'off');
+          showCodeT = setTimeout(() => { if (openConns <= 0){ $('codePanel').classList.remove('hide'); $('connPanel').classList.add('hide'); } }, 8000);
+        }
+      });
+    });
+  }
+  $('newCode').onclick = () => makePeer(true); $('newCode2').onclick = () => makePeer(true); makePeer(false);
+  window.addEventListener('online', () => { if (peer && peer.disconnected) try{ peer.reconnect(); }catch(e){} });
+
+  /* ================= PC -> PHONE (bhejna) ================= */
+  const txJobs = [], tm = meter(); let txCS = 64 * 1024, txResync = false, txSession = false, showCodeT = null;
+  const txEnded = j => j.state === 'removed' || j.state === 'done';
+  function txAnnounce(j, c){
+    j.ready = false; j.next = 0; j.sent = 0; j.have = new Set(); if (j.state === 'send' || j.state === 'sent') j.state = 'wait';
+    try{ (c || conns.find(x => x.open)).send(JSON.stringify({ t:'meta', id:j.id, key:j.key, name:j.f.name, size:j.f.size, type:j.f.type || guessType(j.f.name), cs:j.cs })); }catch(e){}
+  }
+  function txHook(c){
+    const go = () => {
+      txWorker(c);
+      if (txSession) return; txSession = true;
+      try{ const mx = c.peerConnection.sctp.maxMessageSize; if (mx) txCS = Math.max(16 * 1024, Math.min(256 * 1024, mx) - 16); }catch(e){}
+      txJobs.forEach(j => { if (txEnded(j)) return; if (!j.started){ j.cs = txCS; j.n = Math.ceil(j.f.size / j.cs); } txAnnounce(j, c); });
+    };
+    if (c.open) go(); else c.on('open', go);
+  }
+  function txTake(){
+    for (const j of txJobs){
+      if (!j.ready || txEnded(j) || j.state === 'sent') continue;
+      while (j.next < j.n && j.have.has(j.next)) j.next++;
+      if (j.next < j.n){
+        const idx = j.next; let cnt = 1;
+        while (cnt < 8 && idx + cnt < j.n && !j.have.has(idx + cnt)) cnt++;
+        j.next += cnt; if (j.state === 'wait') j.state = 'send'; j.started = true;
+        return { j, idx, cnt };
+      }
+    }
+    return null;
+  }
+  async function txWorker(conn){
+    const dc = conn.dataChannel;
+    while (conn.open && conns.includes(conn)){
+      const tk = txTake();
+      if (!tk){
+        if (txResync && conns.every(x => !x.open || x.dataChannel.bufferedAmount === 0)){ txResync = false; txJobs.forEach(j => { if (!txEnded(j)) txAnnounce(j, conn); }); }
+        await sleep(40); continue;
+      }
+      const { j, idx, cnt } = tk, start = idx * j.cs, end = Math.min(start + cnt * j.cs, j.f.size);
+      try{
+        const big = await j.f.slice(start, end).arrayBuffer();
+        for (let k = 0; k < cnt; k++){
+          const off = k * j.cs, len = Math.min(j.cs, big.byteLength - off);
+          if (len <= 0) break;
+          const msg = new ArrayBuffer(8 + len), dv = new DataView(msg);
+          dv.setUint32(0, j.id); dv.setUint32(4, idx + k); new Uint8Array(msg, 8).set(new Uint8Array(big, off, len));
+          while (dc.bufferedAmount > 4 * 1024 * 1024 && conn.open){
+            dc.bufferedAmountLowThreshold = 1024 * 1024;
+            await new Promise(r => { const h = () => { dc.removeEventListener('bufferedamountlow', h); r(); }; dc.addEventListener('bufferedamountlow', h); setTimeout(h, 250); });
+          }
+          if (!conn.open){ txResync = true; return; }
+          conn.send(msg); j.sent += len; tm.add(len);
+          if (j.sent >= j.f.size && j.state !== 'done') j.state = 'sent';
+        }
+      }catch(e){ txResync = true; if (!conn.open) break; await sleep(100); }
+    }
+  }
+  function txBuildRow(j){
+    const r = document.createElement('div'); r.className = 'qi';
+    r.innerHTML = '<div class="tn"></div><div><b></b><span class="small"></span><div class="bar"><i></i></div></div><button class="btn ghost sm">✕</button>';
+    r.querySelector('b').textContent = j.f.name; const k = kindOf(j.f.type, j.f.name);
+    r.querySelector('.tn').textContent = k === 'video' ? 'VID' : k === 'image' ? 'IMG' : 'FILE';
+    r.querySelector('button').onclick = () => { if (j.state !== 'send'){ j.state = 'removed'; r.remove(); } };
+    j.row = { sub: r.querySelector('.small'), bar: r.querySelector('.bar i'), root: r }; $('txList').appendChild(r);
+  }
+  $('pcFiles').onchange = e => {
+    const open = conns.find(x => x.open);
+    for (const f of e.target.files){
+      if (!f.size) continue;
+      const j = { id: rid(), key: f.name + '|' + f.size + '|' + f.lastModified, f, cs: txCS, n: Math.ceil(f.size / txCS), next: 0, sent: 0, state: 'wait', ready: false, have: new Set() };
+      txBuildRow(j); txJobs.push(j); if (open) txAnnounce(j);
+    }
+    $('txWrap').classList.remove('hide'); e.target.value = '';
+  };
+  setInterval(() => {
+    txJobs.forEach(j => {
+      if (j.state === 'removed' || (j.state === 'done' && j.pd === S.lang)) return;
+      const sv = j.state === 'done' ? j.f.size : (j.mx = Math.max(j.mx || 0, Math.min(j.sent, j.f.size))), p = j.f.size ? Math.min(100, sv / j.f.size * 100) : 0;
+      j.row.bar.style.width = (j.state === 'done' ? 100 : p) + '%';
+      j.row.sub.textContent = fmt(j.f.size) + ' · ' + (j.state === 'wait' ? (openConns > 0 ? t('qWait') : t('txNeed')) : j.state === 'send' ? Math.round(p) + '%' : j.state === 'sent' ? t('txSave') : t('txDone'));
+      if (j.state === 'done') j.pd = S.lang;
+    });
+    const r = tm.rate(); $('txSpeed').textContent = r > 1e4 ? (r / 1e6).toFixed(1) + ' MB/s' : '';
+  }, 300);
+  setInterval(() => {   // sab bhej diya par "ok" nahi aaya: milan karo
+    const open = conns.filter(c => c.open); if (!open.length) return;
+    const drained = open.every(c => c.dataChannel.bufferedAmount === 0);
+    txJobs.forEach(j => { if (j.state === 'sent'){ j.sa = j.sa || Date.now(); if (drained && Date.now() - j.sa > 10000){ j.sa = 0; txAnnounce(j); } } else j.sa = 0; });
+  }, 4000);
+
+  setInterval(() => { const c = conns.find(x => x.open); if (c) try{ c.send('{"t":"ka"}'); }catch(e){} }, 3000);
+
+  async function checkPath(c){
+    for (const w of [2000, 4000, 8000]){
+      await sleep(w); if (openConns <= 0) return;
+      const k = await pathKind(c); if (!k) continue;
+      setSt('pc', k === 'lan' ? 'stLan' : k === 'relay' ? 'stRelay' : 'stSlow', k === 'lan' ? 'on' : '');
+      $('pathTip').classList.toggle('hide', k === 'lan');
+    }
+  }
+
+  async function freeName(d, name){
+    const i = name.lastIndexOf('.'), b = i > 0 ? name.slice(0,i) : name, e = i > 0 ? name.slice(i) : '';
+    let n = name, k = 0;
+    while (true){
+      let exists = reserved.has(n);
+      if (!exists){ try{ await d.getFileHandle(n); exists = true; }catch(_){} }
+      if (!exists){ reserved.add(n); return n; }
+      k++; n = `${b}_${k}${e}`;
+    }
+  }
+
+  function onData(d, c){
+    if (typeof d === 'string'){
+      const msg = JSON.parse(d);
+      if (msg.t === 'ping'){ try{ c.send('{"t":"pong"}'); }catch(e){} return; }
+      if (msg.t === 'have' || msg.t === 'ok'){
+        const tj = txJobs.find(x => x.id === msg.id);
+        if (tj && !txEnded(tj)){
+          if (msg.t === 'ok') tj.state = 'done';
+          else { tj.have = new Set(msg.list); tj.sent = Math.min(tj.f.size, tj.have.size * tj.cs); tj.next = 0; tj.ready = true; if (tj.have.size >= tj.n) tj.state = 'sent'; }
+        }
+        return;
+      }
+      if (msg.t !== 'meta') return;
+      let F = files.get(msg.key);
+      if (!F){   // nayi file; purani ho to wahi se resume hoti hai
+        if (!dir && msg.size > 5e8) setSt('pc', 'bigFile', 'off');
+        const name = safeName(msg.name);
+        F = { id: msg.id, key: msg.key, name, size: msg.size, type: msg.type, cs: msg.cs, kind: kindOf(msg.type, name), got: 0, chunks: [], pend: new Map(), have: new Set(), w: null, chain: Promise.resolve(), state: 'recv', fin: false };
+        F.nc = Math.ceil(F.size / F.cs);
+        files.set(msg.key, F); F.el = addCard(F);
+        F.ready = (async () => {
+          if (!dir) return;
+          try{
+            const nm = await freeName(dir, name);
+            F.fh = await dir.getFileHandle(nm, { create:true });
+            F.w = await F.fh.createWritable(); F.saved = true; F.shown = nm;
+          }catch(e){ F.w = null; F.saved = false; }
+        })();
+      }
+      byId.set(msg.id, F);
+      try{
+        c.send(JSON.stringify({ t:'have', id: msg.id, list: F.state === 'done' ? Array.from({ length: F.nc }, (_, i) => i) : [...F.have] }));
+        if (F.state === 'done') c.send(JSON.stringify({ t:'ok', id: msg.id }));
+      }catch(e){}
+      return;
+    }
+    const dv = new DataView(d), id = dv.getUint32(0), idx = dv.getUint32(4), F = byId.get(id);
+    if (!F || F.state !== 'recv' || F.have.has(idx)) return;
+    F.have.add(idx);
+    const payload = new Uint8Array(d, 8);
+    F.ready.then(() => {
+      if (F.w){   // 16 chunk (~4MB) ka block ban jaye tab ek hi baar disk par likho: bahut tez
+        const bk = (idx / 16) | 0, lo = bk * 16, hi = Math.min(lo + 16, F.nc);
+        let pb = F.pend.get(bk); if (!pb){ pb = { parts: new Array(hi - lo), n: 0, need: hi - lo }; F.pend.set(bk, pb); }
+        pb.parts[idx - lo] = payload; pb.n++;
+        if (pb.n === pb.need){ F.pend.delete(bk); const blob = new Blob(pb.parts); F.chain = F.chain.then(() => F.w.write({ type:'write', position: lo * F.cs, data: blob })); }
+      } else F.chunks[idx] = payload;
+      F.got += payload.byteLength; totalBytes += payload.byteLength; m.add(payload.byteLength);
+      F.proc = (F.proc || 0) + 1;
+      if (F.proc >= F.nc) finish(F);
+    });
+  }
+
+  async function finish(F){
+    if (F.fin) return; F.fin = true;
+    let blob;
+    try{
+      if (F.w){ await F.chain; await F.w.close(); blob = await F.fh.getFile(); }
+      else blob = new Blob(F.chunks, { type: F.type });
+    }catch(e){ F.state = 'err'; return; }
+    F.chunks = [];
+    const ack = conns.find(c => c.open); if (ack) try{ ack.send(JSON.stringify({ t:'ok', id: F.id })); }catch(e){}
+    const url = URL.createObjectURL(blob), name = F.shown || F.name;
+    F.url = url; F.state = 'done';
+    F.el.bar.style.width = '100%';
+    F.el.thumb.innerHTML = '';
+    if ((F.kind === 'image' || F.kind === 'video') && thumbCount++ < 60){
+      const tn = document.createElement(F.kind === 'video' ? 'video' : 'img'); tn.src = url; if (F.kind === 'image'){ tn.decoding = 'async'; tn.loading = 'lazy'; }
+      if (F.kind === 'video'){ tn.muted = true; tn.preload = 'metadata'; }
+      tn.onclick = () => window.open(url, '_blank'); F.el.thumb.appendChild(tn);
+    } else F.el.thumb.textContent = (name.split('.').pop() || 'file').toUpperCase();
+    const a = document.createElement('a'); a.href = url; a.download = name; a.dataset.i = 'dl'; a.textContent = t('dl'); F.el.acts.appendChild(a);
+    done.push(F); $('dlAll').disabled = $('clearAll').disabled = false; beep();
+  }
+
+  function addCard(F){
+    $('empty').classList.add('hide');
+    const el = document.createElement('div'); el.className = 'item';
+    el.innerHTML = '<div class="thumb"></div><div class="meta"><b></b><span class="small"></span><div class="bar"><i></i></div></div><div class="acts"></div>';
+    el.querySelector('b').textContent = F.name;
+    $('bin').prepend(el);
+    return { root: el, thumb: el.querySelector('.thumb'), sub: el.querySelector('.meta span'), bar: el.querySelector('.bar i'), acts: el.querySelector('.acts') };
+  }
+
+  setInterval(() => {
+    files.forEach(F => {
+      if (F.state === 'recv'){ F.el.bar.style.width = (F.size ? F.got / F.size * 100 : 0) + '%'; F.el.sub.textContent = fmt(F.got) + ' / ' + fmt(F.size); }
+      else if (F.state === 'done'){ if (F.subL !== S.lang){ F.subL = S.lang; F.el.sub.textContent = fmt(F.size) + (F.saved ? ' · ' + t('savedAs', F.shown) : ''); } }
+      else F.el.sub.textContent = t('saveErr');
+    });
+    $('stFiles').textContent = done.length + (files.size > done.length ? ' (+' + (files.size - done.length) + ')' : '');
+    $('stSize').textContent = fmt(totalBytes);
+    $('stSpeed').textContent = (m.rate()/1e6).toFixed(1) + ' MB/s';
+  }, 250);
+
+  $('dlAll').onclick = () => done.forEach((F,i) => setTimeout(() => { const a = document.createElement('a'); a.href = F.url; a.download = F.shown || F.name; a.click(); }, i * 300));
+  $('clearAll').onclick = () => {
+    done.forEach(F => { URL.revokeObjectURL(F.url); F.el.root.remove(); files.delete(F.key); byId.forEach((v, k) => { if (v === F) byId.delete(k); }); });
+    done.length = 0; $('dlAll').disabled = $('clearAll').disabled = true;
+    if (!files.size) $('empty').classList.remove('hide');
+  };
+  $('pickDir').onclick = async () => {
+    if (!window.showDirectoryPicker){ alert(t('noFS')); return; }
+    try{ dir = await showDirectoryPicker({ id:'mediabeam', mode:'readwrite', startIn:'desktop' }); folderName = dir.name; renderSt(); }catch(e){}
+  };
+}
+
+/* ================= MOBILE ================= */
+function startPhone(){
+  $('phone').classList.remove('hide'); setSt('ph', 'stEnter');
+  let peer = null, timer = null, retryT = null, wl = null, opened = 0, code = null, linked = false, lastRx = 0, thumbN = 0, resync = false, shownTot = 0;
+  const conns = [], jobs = [], m = meter(), saved = sessionStorage.getItem('mb_pcode');
+  const ended = j => j.state === 'removed' || j.state === 'done' || j.state === 'error';
+  $('codeIn').addEventListener('input', e => e.target.value = e.target.value.replace(/\D/g,'').slice(0,6));
+  $('codeIn').focus();
+
+  function link(c){
+    code = c; clearTimeout(retryT); retryT = null; clearTimeout(timer);
+    const old = peer; peer = null; if (old) try{ old.destroy(); }catch(e){}
+    conns.length = 0; opened = 0; lastRx = Date.now();
+    $('connectBtn').disabled = true; setSt('ph', linked ? 'stRetry' : 'stConnecting');
+    const me = peer = new Peer(ICE);
+    me.on('open', () => {
+      if (peer !== me) return;
+      timer = setTimeout(() => { if (peer === me && !opened) fail(); }, 12000);
+      for (let i = 0; i < PAR; i++){
+        const c = me.connect(PREFIX + code, { reliable:true, serialization:'raw' });
+        conns.push(c);
+        let was = false;
+        c.on('open', () => { if (peer !== me) return; was = true; opened++; if (opened === 1) onFirst(c); worker(c); });
+        c.on('data', d => onMsg(d, c));
+        c.on('close', () => { if (peer !== me || !was) return; opened--; if (opened <= 0) drop('saare channel band hue'); else resync = true; });
+      }
+    });
+    me.on('disconnected', () => { if (peer === me) try{ me.reconnect(); }catch(e){} });
+    me.on('error', e => {
+      if (peer !== me || opened) return;
+      if (e.type === 'peer-unavailable' && !linked){ setSt('ph', 'stWrong', 'off'); $('connectBtn').disabled = false; return; }
+      fail();
+    });
+  }
+  function fail(){ if (!linked){ setSt('ph', 'stNo', 'off'); $('connectBtn').disabled = false; return; } retry(); }
+  function retry(){
+    if (retryT) return; setSt('ph', 'stRetry'); $('connectBtn').disabled = false;
+    retryT = setTimeout(() => { retryT = null; link(code); }, 2000);
+  }
+  // koi bhi connection tute: sab band karo aur apne aap dobara judo; files wahin se resume
+  let dbgN = 0;
+  function drop(why){
+    dbgN++; const dg = $('dbg'); dg.classList.remove('hide'); dg.textContent = '↻ reconnect #' + dbgN + ' · ' + (why || '?') + ' · ' + new Date().toLocaleTimeString();
+    const old = peer; peer = null; if (old) try{ old.destroy(); }catch(e){}
+    opened = 0; conns.length = 0; jobs.forEach(j => j.ready = false); retry();
+  }
+  async function phPath(c){
+    for (const w of [2000, 4000, 8000]){
+      await sleep(w); if (opened <= 0) return;
+      const k = await pathKind(c); if (!k) continue;
+      $('phTip').classList.toggle('hide', k === 'lan');
+    }
+  }
+  function onFirst(c){
+    clearTimeout(timer); linked = true; sessionStorage.setItem('mb_pcode', code);
+    setSt('ph', 'stOk', 'on'); $('codeStep').classList.add('hide'); $('sendStep').classList.remove('hide'); keepAwake();
+    try{ const mx = c.peerConnection.sctp.maxMessageSize; if (mx) CP = Math.max(16 * 1024, Math.min(256 * 1024, mx) - 16); }catch(e){}
+    jobs.forEach(j => { if (!ended(j)) announce(j, c); });
+    phPath(c);
+  }
+  function announce(j, c){
+    j.ready = false; j.next = 0; j.sent = 0; j.have = new Set(); if (j.state === 'send' || j.state === 'sent') j.state = 'wait';
+    try{ (c || conns.find(x => x.open)).send(JSON.stringify({ t:'meta', id:j.id, key:j.key, name:j.f.name, size:j.f.size, type:j.f.type || guessType(j.f.name), cs:j.cs })); }catch(e){}
+  }
+  function onMsg(d, c){
+    lastRx = Date.now();
+    if (typeof d !== 'string'){ rxChunk(d); return; }
+    const x = JSON.parse(d);
+    if (x.t === 'meta'){ rxMeta(x, c); return; }
+    const j = jobs.find(j => j.id === x.id);
+    if (x.t === 'ok' && j) j.state = 'done';
+    else if (x.t === 'have' && j && !ended(j)){
+      j.have = new Set(x.list); j.sent = Math.min(j.f.size, j.have.size * j.cs); j.next = 0; j.ready = true;
+      if (j.have.size >= j.n) j.state = 'sent';
+    }
+  }
+  setInterval(() => {
+    if (opened <= 0) return;
+    const open = conns.filter(c => c.open);
+    if (open.length){ open.sort((a, b) => a.dataChannel.bufferedAmount - b.dataChannel.bufferedAmount); try{ open[0].send('{"t":"ping"}'); }catch(e){} }
+    if (Date.now() - lastRx > 30000){ drop('PC se 30 sec koi jawab nahi'); return; }
+    const drained = open.every(c => c.dataChannel.bufferedAmount === 0);
+    jobs.forEach(j => {   // sab bhej diya par PC ka "ok" nahi aaya: milan karo, khoya chunk wapas jaayega
+      if (j.state === 'sent'){ j.sa = j.sa || Date.now(); if (drained && Date.now() - j.sa > 10000){ j.sa = 0; announce(j); } } else j.sa = 0;
+    });
+  }, 4000);
+  window.addEventListener('online', () => { if (linked && opened === 0){ clearTimeout(retryT); retryT = null; link(code); } });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden){ keepAwake(); if (linked && opened === 0 && !retryT) retry(); } });
+
+  function connect(){
+    const c = $('codeIn').value.trim();
+    if (c.length !== 6){ setSt('ph', 'st6', 'off'); return; }
+    linked = false; link(c);
+  }
+  $('connectBtn').onclick = connect;
+  $('codeIn').addEventListener('keydown', e => { if (e.key === 'Enter') connect(); });
+  async function keepAwake(){ try{ if (!wl || wl.released) wl = await navigator.wakeLock.request('screen'); }catch(e){} }
+
+  function addFiles(list){
+    for (const f of list){
+      const j = { id: rid(), key: f.name + '|' + f.size + '|' + f.lastModified, f, cs: CP, n: Math.ceil(f.size / CP), next: 0, sent: 0, state: f.size ? 'wait' : 'error', ready: false, have: new Set() };
+      jobs.push(j); buildRow(j); if (j.state === 'wait' && opened > 0) announce(j);
+    }
+  }
+  $('fGal').onchange = e => { addFiles(e.target.files); e.target.value = ''; };
+  $('fAny').onchange = e => { addFiles(e.target.files); e.target.value = ''; };
+
+  function buildRow(j){
+    const r = document.createElement('div'); r.className = 'qi';
+    r.innerHTML = `<div class="tn"></div><div><b></b><span class="small"></span><div class="bar"><i></i></div></div><button class="btn ghost sm">✕</button>`;
+    r.querySelector('b').textContent = j.f.name;
+    const tn = r.querySelector('.tn'), k = kindOf(j.f.type, j.f.name);
+    if (k !== 'other' && thumbN++ < 30){ const el = document.createElement(k === 'video' ? 'video' : 'img'); el.src = URL.createObjectURL(j.f) + (k === 'video' ? '#t=0.1' : ''); if (k === 'video'){ el.muted = true; el.preload = 'metadata'; } else { el.decoding = 'async'; el.loading = 'lazy'; } tn.appendChild(el); } else tn.textContent = k === 'video' ? 'VID' : k === 'image' ? 'IMG' : 'FILE';
+    r.querySelector('button').onclick = () => { if (j.state === 'wait' || j.state === 'error' || j.state === 'done'){ j.state = 'removed'; r.remove(); } };
+    j.row = { sub: r.querySelector('.small'), bar: r.querySelector('.bar i'), root: r };
+    $('queue').appendChild(r);
+  }
+
+  /* ================= PC -> PHONE (receive) ================= */
+  const rxByKey = new Map(), rxById = new Map(), rxm = meter(), hasOPFS = !!(navigator.storage && navigator.storage.getDirectory);
+  function rxBuildRow(F){
+    if ($('rxEmpty')) $('rxEmpty').remove();
+    const r = document.createElement('div'); r.className = 'qi'; r.style.gridTemplateColumns = '1fr auto';
+    r.innerHTML = '<div><b></b><span class="small"></span><div class="bar"><i></i></div></div><span class="act"></span>';
+    r.querySelector('b').textContent = F.name; F.sub = r.querySelector('.small'); F.bar = r.querySelector('.bar i'); F.act = r.querySelector('.act');
+    $('rxList').prepend(r);
+  }
+  function rxMeta(x, c){
+    let F = rxByKey.get(x.key);
+    if (!F){
+      F = { id: x.id, key: x.key, name: safeName(x.name), size: x.size, type: x.type, cs: x.cs, got: 0, proc: 0, chunks: [], pend: new Map(), have: new Set(), w: null, chain: Promise.resolve(), state: 'recv', fin: false };
+      F.nc = Math.ceil(F.size / F.cs); rxByKey.set(x.key, F); rxBuildRow(F);
+      F.ready = (async () => {
+        if (!hasOPFS) return;   // phone ki apni disk par likhta hai, RAM me nahi
+        try{ const root = await navigator.storage.getDirectory(); F.fh = await root.getFileHandle('mb_' + x.id + '_' + Date.now(), { create:true }); F.w = await F.fh.createWritable(); }
+        catch(e){ F.w = null; }
+      })();
+    }
+    rxById.set(x.id, F);
+    try{
+      c.send(JSON.stringify({ t:'have', id: x.id, list: F.state === 'done' ? Array.from({ length: F.nc }, (_, i) => i) : [...F.have] }));
+      if (F.state === 'done') c.send(JSON.stringify({ t:'ok', id: x.id }));
+    }catch(e){}
+  }
+  function rxChunk(d){
+    const dv = new DataView(d), id = dv.getUint32(0), idx = dv.getUint32(4), F = rxById.get(id);
+    if (!F || F.state !== 'recv' || F.have.has(idx)) return;
+    F.have.add(idx);
+    const payload = new Uint8Array(d, 8);
+    F.ready.then(() => {
+      if (F.w){
+        const bk = (idx / 16) | 0, lo = bk * 16, hi = Math.min(lo + 16, F.nc);
+        let pb = F.pend.get(bk); if (!pb){ pb = { parts: new Array(hi - lo), n: 0, need: hi - lo }; F.pend.set(bk, pb); }
+        pb.parts[idx - lo] = payload; pb.n++;
+        if (pb.n === pb.need){ F.pend.delete(bk); const blob = new Blob(pb.parts); F.chain = F.chain.then(() => F.w.write({ type:'write', position: lo * F.cs, data: blob })); }
+      } else F.chunks[idx] = payload;
+      F.got += payload.byteLength; rxm.add(payload.byteLength); F.proc++;
+      if (F.proc >= F.nc) rxFinish(F);
+    });
+  }
+  async function rxFinish(F){
+    if (F.fin) return; F.fin = true;
+    let blob;
+    try{ if (F.w){ await F.chain; await F.w.close(); blob = await F.fh.getFile(); } else blob = new Blob(F.chunks, { type: F.type }); }
+    catch(e){ F.state = 'err'; F.sub.textContent = 'save error'; return; }
+    F.chunks = []; F.state = 'done';
+    const ack = conns.find(c => c.open); if (ack) try{ ack.send(JSON.stringify({ t:'ok', id: F.id })); }catch(e){}
+    const a = document.createElement('a'); a.className = 'btn sm'; a.href = URL.createObjectURL(blob); a.download = F.name; a.dataset.i = 'rxSave'; a.textContent = t('rxSave');
+    F.act.appendChild(a); F.bar.style.width = '100%'; F.sub.textContent = fmt(F.size) + ' · ' + t('rxDone');
+  }
+  setInterval(() => rxByKey.forEach(F => { if (F.state === 'recv'){ F.bar.style.width = (F.size ? F.got / F.size * 100 : 0) + '%'; F.sub.textContent = fmt(F.got) + ' / ' + fmt(F.size) + ' · ' + (rxm.rate() / 1e6).toFixed(1) + ' MB/s'; } }), 300);
+
+  const RUN = 8;   // ek baar me 8 chunk (~2MB) storage se padho
+  function take(){
+    for (const j of jobs){
+      if (!j.ready || ended(j) || j.state === 'sent') continue;
+      while (j.next < j.n && j.have.has(j.next)) j.next++;
+      if (j.next < j.n){
+        const idx = j.next; let cnt = 1;
+        while (cnt < RUN && idx + cnt < j.n && !j.have.has(idx + cnt)) cnt++;
+        j.next += cnt; if (j.state === 'wait') j.state = 'send';
+        return { j, idx, cnt };
+      }
+    }
+    return null;
+  }
+  async function worker(conn){
+    const dc = conn.dataChannel;
+    while (conn.open && conns.includes(conn)){
+      const tk = take();
+      if (!tk){
+        if (resync && conns.every(x => !x.open || x.dataChannel.bufferedAmount === 0)){ resync = false; jobs.forEach(j => { if (!ended(j)) announce(j, conn); }); }
+        await sleep(40); continue;
+      }
+      const { j, idx, cnt } = tk, start = idx * j.cs, end = Math.min(start + cnt * j.cs, j.f.size);
+      try{
+        const big = await j.f.slice(start, end).arrayBuffer();
+        for (let k = 0; k < cnt; k++){
+          const off = k * j.cs, len = Math.min(j.cs, big.byteLength - off);
+          if (len <= 0) break;
+          const msg = new ArrayBuffer(8 + len), dv = new DataView(msg);
+          dv.setUint32(0, j.id); dv.setUint32(4, idx + k); new Uint8Array(msg, 8).set(new Uint8Array(big, off, len));
+          while (dc.bufferedAmount > 4 * 1024 * 1024 && conn.open){   // buffer bhara hai to RUKO (pehle 200ms baad bhej deta tha)
+            dc.bufferedAmountLowThreshold = 1024 * 1024;
+            await new Promise(r => { const h = () => { dc.removeEventListener('bufferedamountlow', h); r(); }; dc.addEventListener('bufferedamountlow', h); setTimeout(h, 250); });
+          }
+          if (!conn.open){ resync = true; return; }
+          conn.send(msg);
+          j.sent += len; m.add(len);
+          if (j.sent >= j.f.size && j.state !== 'done') j.state = 'sent';
+        }
+      }catch(e){ resync = true; if (!conn.open) break; await sleep(100); }
+    }
+  }
+
+  $('clearDone').onclick = () => jobs.forEach(j => { if (j.state === 'done'){ j.state = 'removed'; j.row.root.remove(); } });
+
+  setInterval(() => {
+    let tot = 0, sent = 0, doneN = 0, live = 0;
+    jobs.forEach(j => {
+      if (j.state === 'removed') return;
+      live++; tot += j.f.size;
+      const sv = j.state === 'done' ? j.f.size : (j.mx = Math.max(j.mx || 0, Math.min(j.sent, j.f.size)));
+      sent += sv;
+      if (j.state === 'done' && j.pd === S.lang){ doneN++; return; }
+      const p = j.f.size ? Math.min(100, sv / j.f.size * 100) : 0;
+      j.row.bar.style.width = (j.state === 'done' ? 100 : p) + '%';
+      const txt = { wait:t('qWait'), send:Math.round(p) + '%', sent:t('qSave'), done:t('qDone'), error:t('qEmpty') }[j.state];
+      j.row.sub.textContent = fmt(j.f.size) + ' · ' + txt;
+      if (j.state === 'done'){ doneN++; j.pd = S.lang; }
+    });
+    $('phSummary').textContent = live ? t('sumN', doneN, live) : t('sumNone');
+    let infl = 0; conns.forEach(c => { try{ if (c.open) infl += c.dataChannel.bufferedAmount; }catch(e){} });
+    sent = Math.max(0, sent - infl);
+    if (!live) shownTot = 0; else { shownTot = Math.max(shownTot, sent); sent = Math.min(shownTot, tot); }
+    const pct = tot ? Math.round(sent / tot * 100) : 0, r = m.rate();
+    $('totBar').style.width = pct + '%'; $('totTxt').textContent = pct + '%';
+    const rem = tot - sent; $('totSpeed').textContent = r > 1e4 ? (r/1e6).toFixed(1) + ' MB/s · ' + (rem > 0 ? t('left', Math.ceil(rem / r)) : t('fin')) : '';
+  }, 250);
+
+  if (saved){ $('codeIn').value = saved; linked = true; link(saved); }
+}
+
+// page refresh ho jaye to wahi screen aur wahi code wapas
+(() => { const r = sessionStorage.getItem('mb_role'); if (r === 'pc') go(startPC); else if (r === 'phone') go(startPhone); })();
+</script>
+</body>
+</html>
